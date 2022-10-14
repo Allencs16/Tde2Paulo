@@ -22,12 +22,12 @@ while running:
         running = False
         
     if controles == 1:
-        matrixSum(matrizes)
+        functions.matrixSum(matrizes)
     if controles == 2:
-        matrixSum(matrizes)
+        functions.matrixSub(matrizes)
     if controles == 3:
-        matrixSum(matrizes)
+        functions.matrixmult(matrizes)
     if controles == 4:
-        matrixSum(matrizes)
+        functions.matrixDet(matrizes)
     if controles == 5:
-        matrixSum(matrizes)
+        functions.matrixSum(matrizes)
