@@ -6,7 +6,7 @@ from itertools import cycle
 def determinant(matrix):
     array = np.array(matrix)
     shape = array.shape
-    if(shape[0] != shape[1]):
+    if (shape[0] != shape[1]):
         print('Você deve enviar um array quadrado')
         return
     else:
