@@ -11,25 +11,42 @@ def determinant(matrix):
         return
     else:
         print(np.linalg.det(array))
-def matrixSum(matrix):
-    array = matrix
-    while i <= len(array):
-        if i + 1 != None: 
-            if array[i].shape[0] == array[i+1].shape[0]:
-                print(array[i]+array[i+1])
-def matrixSubt(matrix):
-    array = matrix
-    while i <= len(array):
-        if i + 1 != None: 
-            if array[i].shape[0] == array[i+1].shape[0]:
-                print(array[i] - array[i+1])
-                
 def matrixmult(matrix):
     array = matrix
-    while i <= len(array):
-        if i + 1 != None: 
-            if array[i].shape[1] == array[i+1].shape[0]:
-                array[i].dot(array[i+1])
-                print(array[i].dot(array[i+1]))
-            else:
-                print('Impossivel multiplicar')
+    licycle = cycle(array)
+    nextelem = next(licycle)
+    for i in matrix:
+        thiselem, nextelem = nextelem, next(licycle)
+        print(thiselem)
+        if thiselem.shape[1] == nextelem.shape[0]:
+            thiselem.dot(nextelem)
+            print(thiselem.dot(nextelem))
+        else:
+            print('Impossivel multiplicar')
+
+def matrixSum(matrix):
+    array = matrix
+    licycle = cycle(array)
+    nextelem = next(licycle)
+    for i in matrix:
+        thiselem, nextelem = nextelem, next(licycle)
+        if thiselem.shape[0] == nextelem.shape[0]:
+            thiselem + nextelem
+            print(thiselem + nextelem)
+        else:
+            i += 1
+            print('Impossivel multiplicar')
+            
+def matrixSub(matrix):
+    array = matrix
+    licycle = cycle(array)
+    nextelem = next(licycle)
+    for i in matrix:
+        thiselem, nextelem = nextelem, next(licycle)
+        if thiselem.shape[0] == nextelem.shape[0]:
+            thiselem + nextelem
+            print(thiselem - nextelem)
+        else:
+            i += 1
+            print('Impossivel multiplicar')
+            
