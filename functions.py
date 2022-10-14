@@ -1,4 +1,7 @@
 import numpy as np
+import pandas as pd
+import random
+from itertools import cycle
 
 def determinant(matrix):
     array = np.array(matrix)
@@ -20,6 +23,7 @@ def matrixSubt(matrix):
         if i + 1 != None: 
             if array[i].shape[0] == array[i+1].shape[0]:
                 print(array[i] - array[i+1])
+                
 def matrixmult(matrix):
     array = matrix
     while i <= len(array):
