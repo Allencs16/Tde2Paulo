@@ -5,29 +5,27 @@ import random
 
 
 if __name__ == '__main__':
-    #functions.determinant([[1, 3, 7, 1], [4.5, 10, -10, 5], [32, 9, -1, -4]])
-    functions.somaMatrix([[[1, 2], [0, 2]], [[1, 1], [0, 2]]])
 
-matrizes = []
-n = int(input('Digite o número de matrizes a serem geradas: '))
-for i in range(0,n):
-    dimensao  = random.randint(2, 5)
-    a = np.random.randint(5, size=(dimensao, dimensao))
-    matrizes.append(a)
-running = True
+    matrizes = []
+    n = int(input('Digite o número de matrizes a serem geradas: '))
+    for i in range(0,n):
+        dimensao  = random.randint(2, 5)
+        a = np.random.randint(5, size=(dimensao, dimensao))
+        matrizes.append(a)
+    running = True
 
-while running:
-    controles = int(print('Digite 1 para soma \n Digite 2 para subtração \n Digite 3 para multiplicar \n Digite 4 para obter o determinante \n Digite 5 para obter as inversas \n Digite 6 para sair \n Opção: '))
-    if controles == 6:
-        running = False
-        
-    if controles == 1:
-        functions.matrixSum(matrizes)
-    if controles == 2:
-        functions.matrixSub(matrizes)
-    if controles == 3:
-        functions.matrixmult(matrizes)
-    if controles == 4:
-        functions.matrixDet(matrizes)
-    if controles == 5:
-        functions.matrixSum(matrizes)
+    while running:
+        controles = int(input('1 para soma \n 2 para subtração \n 3 para multiplicar \n 4 para obter o determinante \n 5 para obter as inversas \n 6 para sair \n Opção: '))
+        if controles == 6:
+            running = False
+
+        if controles == 1:
+            functions.matrixSum(matrizes)
+        if controles == 2:
+            functions.matrixSum(matrizes)
+        if controles == 3:
+            functions.matrixSum(matrizes)
+        if controles == 4:
+            functions.matrixSum(matrizes)
+        if controles == 5:
+            functions.matrixInv(matrizes)

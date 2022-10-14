@@ -12,7 +12,7 @@ def matrixDet(matrix):
             det  = np.linalg.det(thiselem)    
             i += 1
             print('matriz = {} determinante = {}'.format(thiselem,det))
-            
+
 def matrixmult(matrix):
     array = matrix
     licycle = cycle(array)
@@ -50,5 +50,10 @@ def matrixSub(matrix):
             print(thiselem - nextelem)
         else:
             i += 1
-            print('Impossivel Subtrair')
-            
+            print('Impossivel multiplicar')
+
+def matrixInv(matrix):
+    for i in matrix:
+        print(f"A matriz original é \n {i}")
+        print("A matriz inversa é:")
+        print(np.linalg.inv(i))
