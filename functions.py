@@ -1,7 +1,11 @@
-import numpy as np
-import pandas as pd
+import csv
 import random
 from itertools import cycle
+import numpy as np
+
+with open('countries.csv', 'w', encoding='UTF8') as f:
+    writer = csv.writer(f)
+
 
 def matrixDet(matrix):
     array = matrix
@@ -10,6 +14,7 @@ def matrixDet(matrix):
     for i in matrix:
             thiselem, nextelem = nextelem, next(licycle)
             det  = np.linalg.det(thiselem)    
+            writer.writerow(det)
             i += 1
             print('matriz = {} determinante = {}'.format(thiselem,det))
 
@@ -21,11 +26,7 @@ def matrixmult(matrix):
         thiselem, nextelem = nextelem, next(licycle)
         print(thiselem)
         if thiselem.shape[1] == nextelem.shape[0]:
-            thiselem.dot(nextelem)
-            print(thiselem.dot(nextelem))
-        else:
-            print('Impossivel multiplicar')
-
+            writer.writerow(thiselem.dot(nextelem))
 def matrixSum(matrix):
     array = matrix
     licycle = cycle(array)
@@ -33,11 +34,7 @@ def matrixSum(matrix):
     for i in matrix:
         thiselem, nextelem = nextelem, next(licycle)
         if thiselem.shape[0] == nextelem.shape[0]:
-            thiselem + nextelem
-            print(thiselem + nextelem)
-        else:
-            i += 1
-            print('Impossivel Somar')
+            writer.writerow(thiselem + nextelem)
             
 def matrixSub(matrix):
     array = matrix
@@ -46,14 +43,9 @@ def matrixSub(matrix):
     for i in matrix:
         thiselem, nextelem = nextelem, next(licycle)
         if thiselem.shape[0] == nextelem.shape[0]:
-            thiselem + nextelem
-            print(thiselem - nextelem)
-        else:
-            i += 1
-            print('Impossivel multiplicar')
+            writer.writerow(thiselem - nextelem)
 
 def matrixInv(matrix):
     for i in matrix:
-        print(f"A matriz original é \n {i}")
-        print("A matriz inversa é:")
-        print(np.linalg.inv(i))
+        if matrixDet(i) != 0:
+            writer.writerow(np.linalg.inv(i))
