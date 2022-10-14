@@ -49,4 +49,9 @@ def matrixSub(matrix):
         else:
             i += 1
             print('Impossivel multiplicar')
-            
+
+def matrixInv(matrix):
+    for i in matrix:
+        print(f"A matriz original é \n {i}")
+        print("A matriz inversa é:")
+        print(np.linalg.inv(i))
