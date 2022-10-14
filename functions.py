@@ -2,8 +2,12 @@ import numpy as np
 
 def determinant(matrix):
     array = np.array(matrix)
-    print(np.linalg.det(array))
-
+    shape = array.shape
+    if(shape[0] != shape[1]):
+        print('Você deve enviar um array quadrado')
+        return
+    else:
+        print(np.linalg.det(array))
 def matrixSum(matrix):
     array = matrix
     while i <= len(array):
