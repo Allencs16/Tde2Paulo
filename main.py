@@ -1,9 +1,12 @@
 import functions
 import csv
+import numpy as np
 import random
-
+import pandas as pd
 
 if __name__ == '__main__':
+
+
 
     matrizes = []
     n = int(input('Digite o número de matrizes a serem geradas: '))
@@ -11,6 +14,10 @@ if __name__ == '__main__':
         dimensao  = random.randint(2, 5)
         a = np.random.randint(99, size=(dimensao, dimensao))
         matrizes.append(a)
+    dict = {'matrix': matrizes}
+    df = pd.DataFrame(dict)
+    df.to_csv('matrix.csv')
+    print(df)
     running = True
 
     while running:
@@ -21,10 +28,10 @@ if __name__ == '__main__':
         if controles == 1:
             functions.matrixSum(matrizes)
         if controles == 2:
-            functions.matrixSum(matrizes)
+            functions.matrixSub(matrizes)
         if controles == 3:
-            functions.matrixSum(matrizes)
+            functions.matrixmult(matrizes)
         if controles == 4:
-            functions.matrixSum(matrizes)
+            functions.matrixDet(matrizes)
         if controles == 5:
             functions.matrixInv(matrizes)
