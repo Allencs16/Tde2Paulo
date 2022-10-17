@@ -9,7 +9,7 @@ if __name__ == '__main__':
     n = int(input('Digite o número de matrizes a serem geradas: '))
     for i in range(0,n):
         dimensao  = random.randint(2, 5)
-        a = np.random.randint(5, size=(dimensao, dimensao))
+        a = np.random.randint(99, size=(dimensao, dimensao))
         matrizes.append(a)
     running = True
 
