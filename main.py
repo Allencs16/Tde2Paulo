@@ -11,8 +11,9 @@ if __name__ == '__main__':
     matrizes = []
     n = int(input('Digite o número de matrizes a serem geradas: '))
     for i in range(0,n):
-        dimensao  = random.randint(2, 5)
-        a = np.random.randint(99, size=(dimensao, dimensao))
+        dimensao1  = random.randint(2, 5)
+        dimensao2  = random.randint(2, 5)
+        a = np.random.randint(99, size=(dimensao1, dimensao2))
         matrizes.append(a)
     dict = {'matrix': matrizes}
     df = pd.DataFrame(dict)
