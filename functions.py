@@ -16,7 +16,6 @@ def matrixDet(matrix):
             dict['detMatrix'].append(detMtrix)
             dict['matrix'].append(thiselem)
             print(detMtrix)
-            i += 1
     np.array(dict)
     df = pd.DataFrame(dict)
     df.to_csv('detMatrix.csv')
